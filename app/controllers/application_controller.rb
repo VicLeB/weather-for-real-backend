@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::API
     before_action :authorized
     #should be in an environment variable .env
-    SECRET = "laksdjfk23ad1falsdgjasgj1s2a1dg3as2gas65g4asg23asdg165"
+    SECRET = ENV["SECRET_KEY"]
 
     def encode_token(payload)
+        puts "jhvhcgvbjnkmnbvcdfgnmnb"
         JWT.encode(payload, SECRET)
     end
 
