@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/me', to: 'users#show'
   get '/saved_user_weather_current', to: 'weather#saved_user_current'
   get '/search_result_weather/:location', to: 'weather#search_result_weather'
+  get '/geolocation', to: 'weather#geolocation'
 
 end
