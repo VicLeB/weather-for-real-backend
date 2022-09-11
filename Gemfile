@@ -53,3 +53,5 @@ end
 gem "active_model_serializers", "~> 0.10.13"
 
 gem "rest-client", "~> 2.1"
+
+gem "aws-sdk-s3", require: false

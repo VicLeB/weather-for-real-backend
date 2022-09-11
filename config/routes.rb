@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create]
+  resources :posts, only: [:index, :create, :destroy]
+  resources :users, only: [:create, :show]
 
   post '/login', to: 'auth#create'
   post '/auto_login', to: 'auth#auto_login'
