@@ -2,6 +2,7 @@ class PostSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
   attributes :id, :title, :caption, :location, :date, :image
   belongs_to :user
+  has_many :comments
 
   def image
     if object.image.attached?
