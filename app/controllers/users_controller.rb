@@ -7,13 +7,19 @@ class UsersController < ApplicationController
         if user.valid?
             render json: {user: UserSerializer.new(user)}, status: :created
         else
-            render json: {error: "Failed to create user"}, status: :not_acceptable
+            render json: {error: user.errors}, status: :unprocessable_entity
         end
     end
 
     def show
         @user = User.find_by(id: params[:id])
         render json: {user: @user}, include: ['posts']
+
+        if @user.valid?
+            render json:{user: 'Welcome back'}
+        else
+            render json: {error: ['Invalid Username or Password']}, status: :unauthorized
+        end
     end
 
     private
