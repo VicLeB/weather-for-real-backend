@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/saved_user_weather_current', to: 'weather#saved_user_current'
   get '/search_result_weather/:location', to: 'weather#search_result_weather'
   get '/geolocation', to: 'weather#geolocation'
+  get '/filtered_by_location/:locationData', to: 'posts#filtered_by_location'
 
 end
