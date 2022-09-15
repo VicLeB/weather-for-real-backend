@@ -24,7 +24,8 @@ class PostsController < ApplicationController
                 posts.push(post)
             end
         end
-        render json: posts
+        ordered_posts = posts.sort_by(&:created_at).reverse
+        render json: ordered_posts
     end
 
 
